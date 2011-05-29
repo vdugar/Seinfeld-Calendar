@@ -25,9 +25,9 @@ def post_streak(request):
 			user=MyUser.objects.get(pk=1)
 			if 'old_streak' in data.keys():
 				#Updating the end date
-				streak=Streak.objects.filter(user=user, end_date=data['old_streak']['old_end'])
+				streak=Streak.objects.get(user=user, end_date=data['old_streak']['old_end'])
 				streak.end_date=data['old_streak']['new_end']
-				#streak.save()
+				streak.save()
 				
 			elif 'new_streak' in data.keys():
 				#Creating a new streak

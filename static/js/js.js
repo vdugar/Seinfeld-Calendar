@@ -48,7 +48,7 @@ var onClickDay = function($curr_day){
 	else $prevDiv=$curr_day.prev();
 	
 	//Figuring out the date on the div that's been clicked
-	if($curr_day.hasClass(today.getDate().toString)){
+	if($curr_day.hasClass(today.getDate().toString())){
 		//today's div has been clicked
 		curr_date=today;
 		prev_date=yesterday;
@@ -68,9 +68,10 @@ var onClickDay = function($curr_day){
 		//This is a new streak
 		streak['new_streak']={'today':(curr_date.getMonth()+1)+'/'+curr_date.getDate()}
 	}
-	
 	//Posting data to the server
+	console.log(streak);
 	streak_string=JSON.stringify(streak);
+	console.log(streak_string);
 	$.ajax({
 		url:'post_streak/',
 		data:streak_string,
