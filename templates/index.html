@@ -1,0 +1,521 @@
+<html>
+<head><title>Seinfeld Calendar</title>
+<link rel="stylesheet" href="static/style/style.css"/>
+<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script src="static/js/js.js"></script>
+<script src="static/js/json2.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="menu">
+			<ul>
+				<li><a href="">settings</a> | </li>
+				<li><a href="">login</a> | </li>
+				<li><a href="">signup</a></li>
+			</ul>		
+		</div>
+		<div class="clear">
+		</div>
+		<div>
+			<div class="daylabel">&nbsp;</div>
+			<div class="daylabel"><p>1</p>
+			</div><div class="daylabel"><p>2</p>
+			</div><div class="daylabel"><p>3</p>
+			</div><div class="daylabel"><p>4</p>
+			</div><div class="daylabel"><p>5</p>
+			</div><div class="daylabel"><p>6</p>
+			</div><div class="daylabel"><p>7</p>
+			</div><div class="daylabel"><p>8</p>
+			</div><div class="daylabel"><p>9</p>
+			</div><div class="daylabel"><p>10</p>
+			</div><div class="daylabel"><p>11</p>
+			</div><div class="daylabel"><p>12</p>
+			</div><div class="daylabel"><p>13</p>
+			</div><div class="daylabel"><p>14</p>
+			</div><div class="daylabel"><p>15</p>
+			</div><div class="daylabel"><p>16</p>
+			</div><div class="daylabel"><p>17</p>
+			</div><div class="daylabel"><p>18</p>
+			</div><div class="daylabel"><p>19</p>
+			</div><div class="daylabel"><p>20</p>
+			</div><div class="daylabel"><p>21</p>
+			</div><div class="daylabel"><p>22</p>
+			</div><div class="daylabel"><p>23</p>
+			</div><div class="daylabel"><p>24</p>
+			</div><div class="daylabel"><p>25</p>
+			</div><div class="daylabel"><p>26</p>
+			</div><div class="daylabel"><p>27</p>
+			</div><div class="daylabel"><p>28</p>
+			</div><div class="daylabel"><p>29</p>
+			</div><div class="daylabel"><p>30</p>
+			</div><div class="daylabel"><p>31</p>
+			</div>
+		</div>
+		
+		<div class="clear">
+		</div>
+		<div class="row jan">
+			<div class="label "><p>J</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+			</div><div class="day 31">			
+		</div>
+		</div>
+		
+		<div class="row feb">
+			<div class="label "><p>F</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+		</div>
+		</div>
+
+		<div class="row mar">
+			<div class="label "><p>M</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+			</div><div class="day 31">
+		</div>
+		</div>
+		
+		<div class="row apr">
+			<div class="label "><p>A</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+		</div>
+		</div>
+
+		<div class="row may">
+			<div class="label "><p>M</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+			</div><div class="day 31">
+		</div>
+		</div>
+
+		<div class="row jun">
+			<div class="label "><p>J</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+		</div>
+		</div>
+		
+		<div class="row jul">
+			<div class="label "><p>J</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+			</div><div class="day 31">
+		</div>
+		</div>
+		
+
+		<div class="row aug">
+			<div class="label "><p>A</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+			</div><div class="day 31">
+
+		</div>
+		</div>
+		
+
+		<div class="row sep">
+			<div class="label "><p>S</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+		</div>
+		</div>
+	
+
+		<div class="row oct">
+			<div class="label "><p>O</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+			</div><div class="day 31">
+		</div>
+		</div>
+		
+		<div class="row nov">
+			<div class="label "><p>N</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+		</div>
+		</div>
+		
+		<div class="row dec">
+			<div class="label "><p>D</p>
+			</div>
+			<div class="day 1">
+			</div><div class="day 2">
+			</div><div class="day 3">
+			</div><div class="day 4">
+
+			</div><div class="day 5">
+			</div><div class="day 6">
+			</div><div class="day 7">
+			</div><div class="day 8">
+
+			</div><div class="day 9">
+			</div><div class="day 10">
+			</div><div class="day 11">
+			</div><div class="day 12">
+			</div><div class="day 13">
+			</div><div class="day 14">
+			</div><div class="day 15">
+			</div><div class="day 16">
+			</div><div class="day 17">
+			</div><div class="day 18">
+			</div><div class="day 19">
+			</div><div class="day 20">
+			</div><div class="day 21">
+			</div><div class="day 22">
+			</div><div class="day 23">
+			</div><div class="day 24">
+			</div><div class="day 25">
+			</div><div class="day 26">
+			</div><div class="day 27">
+			</div><div class="day 28">
+			</div><div class="day 29">
+			</div><div class="day 30">
+			</div><div class="day 31">
+		</div>
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>
