@@ -1,6 +1,7 @@
 <html>
 <head><title>Seinfeld Calendar</title>
 <link rel="stylesheet" href="static/style/style.css"/>
+<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
 <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
 <script src="static/js/js.js"></script>
 <script src="static/js/json2.js"></script>
@@ -508,13 +509,26 @@
 			</div><div class="day 27">
 			</div><div class="day 28">
 			</div><div class="day 29">
-			</div><div class="day 30">
-			</div><div class="day 31">
+			</div><div class="day 30"><link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+			</div><div class="day 31 editable">
 		</div>
 		</div>
 
 	</div>
 
+	<!-- Start of Sticky Note -->
+		<div id="dialog2" class="window">
+		<br/>
+		<p>
+		I solemnly declare that i have completed my task for today</p><br/>
+		<input type="button" value="Declare" class="close"/>
+		</div>
+	<!-- End of Sticky Note -->
+
+
+
+	<!-- Mask to cover the whole screen -->
+	 <div id="mask"></div>
 
 </body>
 

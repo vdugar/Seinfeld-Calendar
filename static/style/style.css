@@ -75,4 +75,40 @@ text-align:right;
 margin-bottom:20px;
 margin-right: 5px;}
 
+.day{
+-webkit-border-radius: 2px;}
+
+p{ font-family: 'Special Elite', arial, serif; }
+
+.window p{
+font-size: large;
+line-height:1.7em;}
+
+.editable{
+cursor:pointer;}
+
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+  
+#dialog2 {
+  position:absolute;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+  background:url(../images/notice.png) no-repeat 0 0 transparent; 
+  width:326px; 
+  height:229px;
+  padding:50px 0 20px 25px;
+}
+
 

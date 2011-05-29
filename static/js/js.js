@@ -33,9 +33,44 @@ var makeCurrentEditable=function(){
 		}
 	})
 	$("div.editable").click(function(event){
-		$(this).addClass('highlight',20000);
-		$(this).unbind('click');
-		onClickDay($(this));
+		var $divs = $(this);
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+	
+		//Set heigth and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+		
+		//transition effect		
+		$('#mask').fadeIn(1000);	
+		$('#mask').fadeTo("slow",0.8);	
+	
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+              
+		//Set the popup window to center
+		$('.window').css('top',  winH/2-$('.window').height()/2);
+		$('.window').css('left', winW/2-$('.window').width()/2);
+	
+		//transition effect
+		$('.window').fadeIn(2000); 
+		
+		$('.window .close').click(function () {
+		//Cancel the link behavior
+			
+			$('#mask').hide();
+			$('.window').hide();
+			onClickDay($divs);
+			
+		});		
+
+		//if mask is clicked
+			$('#mask').click(function () {
+			$('#mask').hide();
+			$('.window').hide();
+		});
+		
+		
     });
 };
 
@@ -77,8 +112,12 @@ var onClickDay = function($curr_day){
 		data:streak_string,
 		type:'POST',
 		success: function(value) {
-			alert(value);
-			}
+		($curr_day).unbind('click');
+		($curr_day).addClass('highlight');
+		
+		//Get the screen height and width
+			
+		}
 	});
 };	
 
