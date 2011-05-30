@@ -3,8 +3,13 @@ body{
 	font-size: small;
 	font-family: Verdana, Tahoma,sans-serif;
 	color: #555;
+	background:#fefefe;
 }
 
+.header {
+	background: #000;
+	padding: 3px 0 1px 0;
+}
 .wrap{	width:1186px;
 	margin: 0 auto;
 	margin-top:30px;

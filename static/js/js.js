@@ -6,8 +6,10 @@ var months=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','d
 var abc, today, yesterday;
 
 var updateStreak=function(dates){
+	console.log(dates);
 	var start=dates['start_date'].split('/') ,end=dates['end_date'].split('/');
 	var start_month=parseInt(start[0]), end_month=parseInt(end[0]), start_day=parseInt(start[1]), end_day,i;
+
 	while(start_month<=end_month)
 	{
 		if(start_month==end_month)
@@ -22,6 +24,32 @@ var updateStreak=function(dates){
 	}
 };
 
+var setMissed = function(startDate,today){
+	var start = startDate.split('/');
+	
+	$('.'+months[start[0]-1]).children('.'+start[1]).addClass('start');
+
+	var endD = today.getDate();
+	var end_month = today.getMonth()+1;
+
+	console.log(end_month);
+	
+	var start_month=parseInt(start[0]), start_day=parseInt(start[1]);
+	while(start_month<=end_month)
+	{
+		if(start_month==end_month){
+			end_day=endD;
+			console.log(end_day);
+			console.log(end_month);}
+		else end_day=months_days[start_month-1];
+		for(i=start_day;i<=end_day;i++)
+		{
+			$('.'+months[start_month-1]).children('.'+i).not('.highlight').addClass('miss');
+		}
+		start_month++;
+		start_day=1;	
+	}
+};
 var makeCurrentEditable=function(){
 	//Makes the curerent and previous days editable, provided they aren't previously highlighted
 	
@@ -29,6 +57,7 @@ var makeCurrentEditable=function(){
 	
 	$.each(possible, function(idx, el){
 		if(el.length!=0) {
+			el.removeClass('miss');
 			el.addClass('editable');
 		}
 	})
@@ -165,7 +194,6 @@ $(document).ready(function(){
 	
 	
 	var width = $(window).width();
-	console.log(width);
 	if(width<1024)
 	width = 1024;
 	width = width -100;
@@ -199,6 +227,7 @@ $(document).ready(function(){
 	yesterday=new Date();
 	yesterday.setDate(today.getDate()-1);
 	
+	setMissed('02/24', today);
 	makeCurrentEditable();
 
    
