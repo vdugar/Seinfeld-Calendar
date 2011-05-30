@@ -1,0 +1,25 @@
+<html>
+<head><title>Seinfeld Calendar</title></head>
+
+<body>
+	<h3>Login</h3>
+	{% if loginForm.errors %}
+	    <p class="error">Sorry, that's not a valid username or password</p>
+	{% endif %}
+	<form action='' method='POST'>
+		{% csrf_token %}
+		{{ loginForm.as_p }}
+		<input type='submit' value='Submit' name='login' />
+	</form>
+	<br/><br/>
+	<h3>Signup</h3>
+	{% if signupForm.errors %}
+	    <p class="error">Sorry, that's not a valid username, password or email</p>
+	{% endif %}
+	<form action='' method='POST'>
+		{% csrf_token %}
+		{{ signupForm.as_p }}
+		<input type='submit' value='Signup' name='signup' />
+	</form>	
+</body>
+</html>	

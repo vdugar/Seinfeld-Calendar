@@ -1,11 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class MyUser(models.Model):
-	user_name=models.CharField(max_length=20, default='user')
-	password=models.CharField(max_length=40)
-	join_date=models.CharField(max_length=8)
-	
 class Streak(models.Model):
-	user=models.ForeignKey(MyUser)
+	user=models.ForeignKey(User)
 	start_date=models.CharField(max_length=4)
 	end_date=models.CharField(max_length=4)
