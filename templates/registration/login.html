@@ -1,25 +1,121 @@
-<html>
-<head><title>Seinfeld Calendar</title></head>
-
-<body>
-	<h3>Login</h3>
-	{% if loginForm.errors %}
-	    <p class="error">Sorry, that's not a valid username or password</p>
-	{% endif %}
+<!DOCTYPE html>
+<html><head>
+<title>Seinfeld Calendar</title>
+<link rel="stylesheet" type="text/css" media="all" href="../static/style/reset.css">
+<link rel="stylesheet" type="text/css" media="all" href="../static/style/960.css">
+<link rel="stylesheet" type="text/css" media="all" href="../static/style/layout.css">
+<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
+</head>
+	<body>
+	<div class="header">
+	<div class="container_12 clearfix">
+		<div class="grid_12">
+			<h1>
+				<a href="">Seinfeld Calendar</a>
+			</h1>
+			<nav>
+				<div>
+					{% if loginForm.errors %}
+					    <p class="error">Sorry, that's not a valid username or password</p>
+					{% endif %}
 	<form action='' method='POST'>
 		{% csrf_token %}
-		{{ loginForm.as_p }}
-		<input type='submit' value='Submit' name='login' />
+		<table>
+				<tbody>
+					<tr>
+						<td><label for="id_username" class="label">Username</label></td>
+						<td><label for="id_password" class="label">Password</label></td>
+					</tr>
+					<tr>
+						<td><input id="id_username" type="text" name="username" maxlength="30" class="textinput"></td>
+						<td><input id="id_password" type="password" name="password" maxlength="30" class="textinput"></td>
+						<td><input type="submit" name='login' value="Log In" class="submit"></td>
+					</tr>
+				</tbody>
+		</table>
 	</form>
-	<br/><br/>
-	<h3>Signup</h3>
+</div>
+			</nav>
+		</div>
+	</div>
+	</div>	
+
+	<section id="banner">
+			<div>
+				<div class="container_12 clearfix image">
+					<div class="grid_12">
+						<h2>Don't break the chain!</h2>
+					</div>
+					<div class="grid_7">
+						<p>Put a big red X over that day. "After a few days you'll have a chain. Just keep at it and the chain will grow longer every day. You'll like seeing that chain, especially when you get a few weeks under your belt. Your only job next is to not break the chain."</p>
+					</div>
+					<hr/>
+				</div>
+
+			</div>
+			
+
+		</section>
+
+		<section id="content" class="container_12 clearfix ">
+			<div class="grid_7">
+				some content here
+			</div>
+			<div class="grid_4 push_1">
+				<div id="" class="">
+	
+
 	{% if signupForm.errors %}
 	    <p class="error">Sorry, that's not a valid username, password or email</p>
 	{% endif %}
 	<form action='' method='POST'>
-		{% csrf_token %}
-		{{ signupForm.as_p }}
-		<input type='submit' value='Signup' name='signup' />
+		{% csrf_token %}		
+		<table cellspacing="0" cellpadding="1">
+						<tbody>
+							<tr>
+							<td class="label2"><label for="id_username">Username </label></td>
+							<td><input id="id_username" type="text" name="username" maxlength="30" class="inputtext2"></td>
+							</tr>
+
+							<tr>
+							<td class="label2"><label for="id_password" >Password </label></td>
+							<td><input id="id_password" type="password" name="password" maxlength="30" class="inputtext2"></td>
+							</tr>
+
+							<tr>
+							<td class="label2"><label for="id_email" >Email </label></td>
+							<td><input id="id_email" type="text" name="email" maxlength="30" class="inputtext2"></td>
+							</tr>
+
+							<tr>
+							<td>&nbsp;</td>
+							<td><input value="Sign Up" type="submit" class="submit2" name='signup'></td>
+							</tr>
+						</tbody>
+					</table>
 	</form>	
+
+</div>
+
+			</div>
+			
+		</section>
+		<footer>
+	<div class="container_12 clearfix">
+		<div class="clearfix">
+			<div class="grid_8">
+				Contact Us. All Rights Reserved. 
+			</div>
+			
+		</div>
+	</div>
+</footer>	
+</body>
+</html>
+
+	
+
+
 </body>
 </html>	

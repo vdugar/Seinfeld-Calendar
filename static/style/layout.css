@@ -1,0 +1,234 @@
+body {
+	background: #F3F3F3;
+}
+/*
+	960 Grid System ~ Text CSS.
+	Learn more ~ http://960.gs/
+
+	Licensed under GPL and MIT.
+*/
+
+/* `Basic HTML
+----------------------------------------------------------------------------------------------------*/
+
+body {
+	font: 14px/1.4 'Lucida Grande',Verdana, sans-serif;
+}
+
+hr {
+	border: 0 #ccc solid;
+	border-top-width: 1px;
+	clear: both;
+	height: 0;
+}
+
+h1 {
+	font-size: 25px;
+}
+
+h2 {
+	font-size: 23px;
+}
+
+h3 {
+	font-size: 21px;
+}
+
+h4 {
+	font-size: 19px;
+}
+
+h5 {
+	font-size: 17px;
+}
+
+h6 {
+	font-size: 15px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	line-height: 100%;
+}
+
+p,
+dl,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset,
+figure {
+	margin-bottom: 20px;
+}
+/* `Header
+----------------------------------------------------------------------------------------------------*/
+
+.header {
+	background: #000;
+	padding: 15px 0 1px 0;
+}
+
+.header h1 {
+	float: left;
+	margin: 0;
+}
+hr {
+	background: transparent;
+	color: transparent;
+	border-left:  none;
+	border-right: none;
+	border-top:   none;
+	border-bottom: 1px dashed #ccc;
+}
+.header h1 a {
+	background: url("../images/logo.png") no-repeat;
+	float: left;
+	height: 50px;
+	overflow: hidden;
+	text-indent: -1500px;
+	width: 250px;
+}
+
+.header nav {
+	float: right;
+	margin: 1px 0 0;
+}
+
+.header li {
+	float: left;
+}
+
+#banner {
+	background: #F3F3F3;
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+}
+
+h2 {
+	font-family: 'Special Elite', arial, serif;
+	padding: 40px 0 5px;
+	padding-bottom: 20px;
+	margin: 0;
+	line-height: 110%;
+}
+
+#banner p {
+	color: #333;
+	margin: 0 0 60px;
+}
+
+#banner .image {
+	background: url("../images/seinfeld.png") 100% center no-repeat;
+}
+
+#content {
+	padding: 50px 0;
+}
+
+#content a {
+	color: #563f6b;
+}
+
+footer {
+	background: #222;
+	color: #FFF;
+	padding: 30px 0;
+}
+
+footer a {
+	color: #FFF;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+footer strong {
+	display: block;
+	font-size: 17px;
+	color: #666;
+	margin: 0 0 10px;
+}
+
+.label{
+	font-size: 11px;
+	color: #ccc;
+}
+.label2{
+	font-family: "Lucida Grande",tahoma,verdana,arial,sans-serif;
+	color: #333;
+	font-size: 12px;
+	width: 105px;
+	padding-right: 3px;
+	text-align: right;
+	vertical-align: middle;
+}
+.textinput{
+	padding: 3px;
+	border: 1px solid #BDC7D8;
+	font-family: "Lucida Grande",tahoma,verdana,arial,sans-serif;
+	font-size: 11px;
+	background-color: #eee;
+	border-color: #222;
+	border-width: 1px;
+	margin: 0;
+	width: 100px;
+	margin-right:20px;
+}
+
+.inputtext2{
+	background-color: #fefefe;
+	padding: 6px;
+	font-size: 16px;
+	width: 210px;
+	border-color: #fefefe;
+	margin-top: 6px;
+}
+
+.submit{
+	border: 0;
+	color: #333;
+	cursor: pointer;
+	display: -moz-inline-box;
+	display: inline-block;
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0;
+	outline: none;
+	padding: 2px 4px 2px;
+	white-space: nowrap;
+	-webkit-box-align: center;
+	text-align: center;
+}
+
+.submit2{
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A1D85A), to(#6A9832));
+	background: -moz-linear-gradient(100% 100% 90deg, #6A9832, #A1D85A);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A1D85A), to(#6A9832));
+
+	color: white !important;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 6px 20px;
+	
+	overflow: visible;
+	display: inline-block;
+	text-decoration: none !important;
+	
+
+	-moz-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), inset 0 -1px 1px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), inset 0 -1px 1px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.3);
+
+	margin-top: 10px;
+}
