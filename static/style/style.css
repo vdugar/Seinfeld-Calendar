@@ -90,7 +90,8 @@ font-size: large;
 line-height:1.7em;}
 
 .editable{
-cursor:pointer;}
+cursor:pointer;
+}
 
 #mask {
   position:absolute;
