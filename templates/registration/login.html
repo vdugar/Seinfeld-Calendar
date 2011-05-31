@@ -17,20 +17,22 @@
 			</h1>
 			<nav>
 				<div>
-					{% if loginForm.errors %}
-					    <p class="error">Sorry, that's not a valid username or password</p>
-					{% endif %}
+				{% if loginForm.errors %}
+					<p class="error">Invalid username or password</p>
+				{% endif %}
 	<form action='' method='POST'>
 		{% csrf_token %}
 		<table>
 				<tbody>
 					<tr>
-						<td><label for="id_username" class="label">Username</label></td>
-						<td><label for="id_password" class="label">Password</label></td>
+						<td><span class="label">Username</span></td>
+						<td><span class="label">Password</span></td>
 					</tr>
 					<tr>
-						<td><input id="id_username" type="text" name="username" maxlength="30" class="textinput"></td>
-						<td><input id="id_password" type="password" name="password" maxlength="30" class="textinput"></td>
+						<!--<td><input id="id_username" type="text" name="username" maxlength="30" class="textinput"></td>
+						<td><input id="id_password" type="password" name="password" maxlength="30" class="textinput"></td>-->
+						<td>{{loginForm.username}}</td>
+						<td>{{loginForm.password}}</td>
 						<td><input type="submit" name='login' value="Log In" class="submit"></td>
 					</tr>
 				</tbody>
@@ -67,26 +69,45 @@
 				<div id="" class="">
 	
 
-	{% if signupForm.errors %}
-	    <p class="error">Sorry, that's not a valid username, password or email</p>
-	{% endif %}
 	<form action='' method='POST'>
 		{% csrf_token %}		
 		<table cellspacing="0" cellpadding="1">
 						<tbody>
 							<tr>
 							<td class="label2"><label for="id_username">Username </label></td>
-							<td><input id="id_username" type="text" name="username" maxlength="30" class="inputtext2"></td>
+							<td>
+								{{signupForm.username}}<br/>
+								{% if signupForm.username.errors %}
+									{% for error in signupForm.username.errors %}
+										<p class="error">{{ error }}</p>
+									{% endfor %}
+								{% endif %}		
+										
+							</td>
 							</tr>
 
 							<tr>
 							<td class="label2"><label for="id_password" >Password </label></td>
-							<td><input id="id_password" type="password" name="password" maxlength="30" class="inputtext2"></td>
+							<td>
+								{{signupForm.password}}<br/>
+								{% if signupForm.password.errors %}
+									{% for error in signupForm.password.errors %}
+										<p class="error">{{ error }}</p>
+									{% endfor %}
+								{% endif %}
+							</td>
 							</tr>
 
 							<tr>
 							<td class="label2"><label for="id_email" >Email </label></td>
-							<td><input id="id_email" type="text" name="email" maxlength="30" class="inputtext2"></td>
+							<td>
+								{{signupForm.email}}<br/>
+								{% if signupForm.email.errors %}
+									{% for error in signupForm.email.errors %}
+										<p class="error">{{ error }}</p>
+									{% endfor %}
+								{% endif %}
+							</td>
 							</tr>
 
 							<tr>

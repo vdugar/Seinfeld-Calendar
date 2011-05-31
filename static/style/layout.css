@@ -232,3 +232,13 @@ footer strong {
 
 	margin-top: 10px;
 }
+
+
+.error {
+	color:#CC333F;
+	font-size:10px;
+	font-style:italic;
+	padding:0;
+	margin:0;
+}
+

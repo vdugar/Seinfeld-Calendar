@@ -53,14 +53,18 @@ var setMissed = function(startDate,today){
 var makeCurrentEditable=function(){
 	//Makes the curerent and previous days editable, provided they aren't previously highlighted
 	
-	var possible= [$('div.'+months[today.getMonth()]).children('div.'+today.getDate()).not('.highlight'), $('div.'+months[yesterday.getMonth()]).children('div.'+yesterday.getDate()).not('.highlight')];
+	var possible= [$('div.'+months[today.getMonth()]).children('div.'+today.getDate()).not('.highlight')];
+	
+	//Day before start_date shouldn't be editable
+	if(!($('div.'+months[today.getMonth()]).children('div.'+today.getDate()).hasClass('start')))
+		possible.push($('div.'+months[yesterday.getMonth()]).children('div.'+yesterday.getDate()).not('.highlight'));
 	
 	$.each(possible, function(idx, el){
 		if(el.length!=0) {
 			el.removeClass('miss');
 			el.addClass('editable');
 		}
-	})
+	});
 	$("div.editable").click(function(event){
 		var $divs = $(this);
 		var maskHeight = $(document).height();
@@ -142,8 +146,8 @@ var onClickDay = function($curr_day){
 		type:'POST',
 		success: function(value) {
 		($curr_day).unbind('click');
+		$curr_day.removeClass('editable');
 		($curr_day).addClass('highlight');
-		
 		//Get the screen height and width
 			
 		}
@@ -159,18 +163,33 @@ function toggle_editor(){
 }
 
 function cancel_edit(){
-		$('#title').val("Click to set your message");
 		$('#tools').hide();
 		$('#title').removeClass('editing');
 		$('#title').blur();
 	}
 	
 function save(){
-	new_title = $('#title').val();
-	$('#title').val(new_title);
 	$('#tools').hide();
 	$('#title').removeClass('editing');
 	$('#title').blur();
+	
+	//Posting to server
+	query={
+		'task_message':$('#title').attr('value'),
+		'start_date': (today.getMonth()+1)+'/'+today.getDate()
+	};
+	$.ajax({
+		url:'set_task/',
+		data:JSON.stringify(query),
+		type:'POST',
+		success: function(value) {
+			/*  Clearing up the calendar here itself.
+				Can redirect to the same page again,  but why make the extra server call?*/
+			$("div.highlight").removeClass('highlight');
+			$('.'+months[today.getMonth()]).children('.'+today.getDate()).addClass('start');
+			makeCurrentEditable();
+			}
+	});
 }
 
 
@@ -230,7 +249,10 @@ $(document).ready(function(){
 	$('.day').width(boxWidth);
 	$('.day').height(boxWidth);
 	
-
+	//Setting today's and yesterday's date
+	today=new Date();
+	yesterday=new Date();
+	yesterday.setDate(today.getDate()-1);
 	
 	$.ajax({
 		url:'get_streaks/',
@@ -240,19 +262,24 @@ $(document).ready(function(){
 			
 			$.each(query['data'],function(idx,el) {
 				updateStreak(el);
-			
 			});
+			
+			//Setting information about task
+			if('task' in query){
+				//Existing task
+				$('#title').attr('value', query['task']);
+				setMissed(query['task_start'], today);
+				
+				//Make current editable only if tasks are set
+				makeCurrentEditable();
+			}
+			else {
+				//No task yet
+				$('#title').attr('value', 'Holy Smokes! No task set!');
+			}
+			
 		}
 	});
-	
-	//Setting today's and yesterday's date
-	today=new Date();
-	yesterday=new Date();
-	yesterday.setDate(today.getDate()-1);
-	
-	setMissed('02/24', today);
-	makeCurrentEditable();
-
    
 });
 
