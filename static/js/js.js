@@ -74,8 +74,7 @@ var makeCurrentEditable=function(){
 		$('#mask').css({'width':maskWidth,'height':maskHeight});
 		
 		//transition effect		
-		$('#mask').fadeIn(1000);	
-		$('#mask').fadeTo("slow",0.8);	
+		$('#mask').fadeIn(1);	
 	
 		//Get the window height and width
 		var winH = $(window).height();
@@ -86,7 +85,7 @@ var makeCurrentEditable=function(){
 		$('.window').css('left', winW/2-$('.window').width()/2);
 	
 		//transition effect
-		$('.window').fadeIn(2000); 
+		$('.window').fadeIn(1000); 
 		
 		$('.window .close').click(function () {
 		//Cancel the link behavior
@@ -98,7 +97,13 @@ var makeCurrentEditable=function(){
 		});		
 
 		//if mask is clicked
-			$('#mask').click(function () {
+		$('#mask').click(function () {
+			$('#mask').hide();
+			$('.window').hide();
+		});
+		
+		//if mask is clicked
+		$('.window .cancel').click(function () {
 			$('#mask').hide();
 			$('.window').hide();
 		});

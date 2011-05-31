@@ -1,5 +1,5 @@
 body {
-	background: #F3F3F3;
+	background: url('http://www.primatelabs.ca/assets/img/ui/bg-repeat.gif')  #F3F3F3;
 }
 /*
 	960 Grid System ~ Text CSS.
@@ -107,7 +107,7 @@ hr {
 }
 
 #banner {
-	background: #F3F3F3;
+	background:url('http://www.primatelabs.ca/assets/img/ui/bg-repeat.gif')  #F3F3F3;
 	position: relative;
 	margin: 0;
 	overflow: hidden;

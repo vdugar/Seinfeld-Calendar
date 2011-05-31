@@ -14,7 +14,7 @@
 	<div class="wrap">
 		<div class="bar"/>
 			<div id="message">
-				<input type="text" id="title"/>
+				<input type="text" id="title" onclick="toggle_editor()"/>
 				<div id="tools" style="display:none;">
 					<input id="save" value="SAVE" tabindex="12" type="submit" onclick="save();">
 					<span>OR</span>
@@ -534,7 +534,7 @@
 		<p>
 		I solemnly declare that </p><br/>
 		<input type="button" value="i have completed my task for today!" class="close"/>
-		<input type="button" value="i have been upto no good today!" class="close"/>
+		<input type="button" value="i have been upto no good today!" class="cancel"/>
 		</div>
 	<!-- End of Sticky Note -->
 

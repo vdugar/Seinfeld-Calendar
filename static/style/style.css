@@ -94,7 +94,6 @@ line-height:1.7em;}
 	left:0;
 	top:0;
 	z-index:9000;
-	background-color:#000;
 	display:none;
 }
   
@@ -132,15 +131,15 @@ line-height:1.7em;}
 	min-width: 600px;
 	}
 #title{
+	
 	border:0px;
 	font-family: 'Special Elite', arial, serif;
 	font-size:28px;
 	font-weight:bold;
 	width: 100%;
+	padding: 4px;
 }
-#title:hover{
-	background-color: rgb(255, 255, 211);
-}
+
 .editing{
 	border: 1px inset rgb(233, 233, 174) !important;
 	padding: 4px;
