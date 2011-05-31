@@ -75,10 +75,6 @@ ul,li{
 list-style:none;
 display:inline;}
 
-.menu{
-text-align:right;
-margin-bottom:20px;
-margin-right: 5px;}
 
 .day{
 -webkit-border-radius: 2px;}
@@ -117,4 +113,33 @@ cursor:pointer;
   padding:50px 0 20px 25px;
 }
 
+.menu{
+	text-align:right;
+	display: inline-block;
+}
+
+#message{
+	margin-left: 35px;
+	font-family: Arial;
+	display: inline-block;
+	margin-bottom: 25px;
+	
+	}
+#title{
+	border:0px;
+	font-size:28px;
+	font-weight:bold;
+	width:100%;
+}
+#title:hover{
+	background-color: rgb(255, 255, 211);
+}
+.editing{
+	border: 1px inset rgb(233, 233, 174) !important;
+	padding: 4px;
+	font-size: 22px;
+	font-weight: bold;
+	background-color: rgb(255, 255, 211);
+	margin-bottom: 5px;
+}
 
