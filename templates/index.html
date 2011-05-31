@@ -12,12 +12,20 @@
 	<div class="header">
 	</div>
 	<div class="wrap">
-		<div class="menu">
-			<ul>
-				<li><a href="">how do i use this?</a> / </li>
-				<li><a href="">reset</a> / </li>
-				<li><a href="logout/">logout</a></li>
-			</ul>		
+		<div class="bar"/>
+			<div id="message">
+				<input type="text" value="Click to set your message" id="title" onclick="toggle_editor();">
+				<div id="tools" style="display:none;">
+					<input id="save" value="SAVE" tabindex="12" type="submit" onclick="save();">
+					<span>OR</span>
+					<input value="Cancel" onclick="cancel_edit();" tabindex="13" type="button">
+				</div>
+			</div>
+			<div class="menu">
+					<a href="">how do i use this?</a> / 
+					<a href="">reset</a> / 
+					<a href="logout/">logout</a>
+			</div>
 		</div>
 		<div class="clear">
 		</div>

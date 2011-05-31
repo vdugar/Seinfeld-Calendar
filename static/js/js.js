@@ -150,6 +150,29 @@ var onClickDay = function($curr_day){
 	});
 };	
 
+function toggle_editor(){
+	if(!($('#title').hasClass('editing'))){
+		$('#title').addClass('editing');
+		$('#title').select();
+		$('#tools').show();
+	}
+}
+
+function cancel_edit(){
+		$('#title').val("Click to set your message");
+		$('#tools').hide();
+		$('#title').removeClass('editing');
+		$('#title').blur();
+	}
+	
+function save(){
+	new_title = $('#title').val();
+	$('#title').val(new_title);
+	$('#tools').hide();
+	$('#title').removeClass('editing');
+	$('#title').blur();
+}
+
 
 $(document).ready(function(){
 
