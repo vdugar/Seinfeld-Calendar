@@ -3,7 +3,7 @@ var highlighted={
 };
 var months_days = [31,28,31,30,31,30,31,31,30,31,30,31];
 var months=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec']; 
-var abc, today, yesterday;
+var abc, today, yesterday, curr_title;
 
 var updateStreak=function(dates){
 	console.log(dates);
@@ -160,9 +160,11 @@ function toggle_editor(){
 		$('#title').select();
 		$('#tools').show();
 	}
+	curr_title=$('#title').val();
 }
 
 function cancel_edit(){
+		$('#title').val(curr_title);
 		$('#tools').hide();
 		$('#title').removeClass('editing');
 		$('#title').blur();
@@ -268,6 +270,7 @@ $(document).ready(function(){
 			if('task' in query){
 				//Existing task
 				$('#title').attr('value', query['task']);
+				curr_title=query['task'];
 				setMissed(query['task_start'], today);
 				
 				//Make current editable only if tasks are set
