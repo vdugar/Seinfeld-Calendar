@@ -149,6 +149,7 @@ var onClickDay = function($curr_day){
 		url:'post_streak/',
 		data:streak_string,
 		type:'POST',
+		async:false,
 		success: function(value) {
 		($curr_day).unbind('click');
 		$curr_day.removeClass('editable');
@@ -193,6 +194,7 @@ function save(){
 			/*  Clearing up the calendar here itself.
 				Can redirect to the same page again,  but why make the extra server call?*/
 			$("div.highlight").removeClass('highlight');
+			$("div.start").removeClass('start');
 			$('.'+months[today.getMonth()]).children('.'+today.getDate()).addClass('start');
 			makeCurrentEditable();
 			}
