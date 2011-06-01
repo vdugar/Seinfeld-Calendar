@@ -111,4 +111,7 @@ def signup(request):
 
 def logout(request):
 	auth.logout(request)
-	return HttpResponseRedirect('/signup/')									
+	return HttpResponseRedirect('/signup/')
+
+def demo(request):
+	return render_to_response('demo.html',{})									

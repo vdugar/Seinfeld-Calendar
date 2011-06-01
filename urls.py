@@ -12,4 +12,5 @@ urlpatterns = patterns('seincal.views',
 	(r'^login/$',  'signup'),
 	(r'^signup/$',  'signup'),
 	(r'^logout/$', 'logout'),
+	(r'^demo/$', 'demo'),
 )
