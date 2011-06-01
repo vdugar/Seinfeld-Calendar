@@ -152,7 +152,7 @@ $(document).ready(function(){
 	
 	$('.enddemo').live('click', function(ev) {
 		ev.preventDefault();
-		$('.demo').html("hi");
+		$('.demo').html("That's it. Want to <a href='../signup'>sign up?</a>");
 		$('.day').removeClass('highlight');
 		$('.day').removeClass('start');
 		
@@ -173,7 +173,6 @@ $(document).ready(function(){
 		dates ={'start_date':'05/20', 'end_date':'05/29'};
 		updateStreak(dates);
 		setMissed('03/11', today);
-		
 		makeCurrentEditable();
 		
 	});
@@ -183,7 +182,6 @@ $(document).ready(function(){
 		//Cancel the link behavior	
 			$('#mask').hide();
 			$('.window').hide();
-			console.log('calling onClickDay func');
 			onClickDay($divs);
 			});	
 

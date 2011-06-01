@@ -162,7 +162,7 @@ line-height:1.7em;}
 	cursor:hand;
 }
 
-.submit2{
+.submit2, .close{
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A1D85A), to(#6A9832));
 	background: -moz-linear-gradient(100% 100% 90deg, #6A9832, #A1D85A);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A1D85A), to(#6A9832));
@@ -185,7 +185,7 @@ line-height:1.7em;}
 }
 
 .cancel{
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff3f3f), to(#ff1010);
-	background: -moz-linear-gradient(100% 100% 90deg, #6A9832, #A1D85A);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A1D85A), to(#6A9832));
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff3f3f), to(#ff1010));
+	background: -moz-linear-gradient(100% 100% 90deg, #ff1010, #ff3f3f);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff3f3f), to(#ff1010));
 }
