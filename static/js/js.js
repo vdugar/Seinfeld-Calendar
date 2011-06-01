@@ -6,7 +6,6 @@ var months=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','d
 var abc, today, yesterday, curr_title;
 
 var updateStreak=function(dates){
-	console.log(dates);
 	var start=dates['start_date'].split('/') ,end=dates['end_date'].split('/');
 	var start_month=parseInt(start[0]), end_month=parseInt(end[0]), start_day=parseInt(start[1]), end_day,i;
 
@@ -31,16 +30,12 @@ var setMissed = function(startDate,today){
 
 	var endD = today.getDate();
 	var end_month = today.getMonth()+1;
-
-	console.log(end_month);
 	
 	var start_month=parseInt(start[0]), start_day=parseInt(start[1]);
 	while(start_month<=end_month)
 	{
 		if(start_month==end_month){
-			end_day=endD;
-			console.log(end_day);
-			console.log(end_month);}
+			end_day=endD;}
 		else end_day=months_days[start_month-1];
 		for(i=start_day;i<=end_day;i++)
 		{
@@ -66,10 +61,11 @@ var makeCurrentEditable=function(){
 		}
 	});
 	$("div.editable").click(function(event){
-		var $divs = $(this);
+		$divs = $(this);
 		var maskHeight = $(document).height();
 		var maskWidth = $(window).width();
-	
+		
+		console.log('editable div clicked');
 		//Set heigth and width to mask to fill up the whole screen
 		$('#mask').css({'width':maskWidth,'height':maskHeight});
 		
@@ -85,33 +81,11 @@ var makeCurrentEditable=function(){
 		$('.window').css('left', winW/2-$('.window').width()/2);
 	
 		//transition effect
-		$('.window').fadeIn(1000); 
-		
-		$('.window .close').click(function () {
-		//Cancel the link behavior
-			
-			$('#mask').hide();
-			$('.window').hide();
-			onClickDay($divs);
-			
-		});		
-
-		//if mask is clicked
-		$('#mask').click(function () {
-			$('#mask').hide();
-			$('.window').hide();
-		});
-		
-		//if mask is clicked
-		$('.window .cancel').click(function () {
-			$('#mask').hide();
-			$('.window').hide();
-		});
-		
-		
+		$('.window').fadeIn(1000); 		
     });
 };
 
+ 
 var onClickDay = function($curr_day){
 	var streak={}, $prevDiv, curr_date, prev_date, streak_string;
 	
@@ -142,7 +116,6 @@ var onClickDay = function($curr_day){
 		streak['new_streak']={'today':(curr_date.getMonth()+1)+'/'+curr_date.getDate()}
 	}
 	//Posting data to the server
-	console.log(streak);
 	streak_string=JSON.stringify(streak);
 	console.log(streak_string);
 	$.ajax({
@@ -155,7 +128,7 @@ var onClickDay = function($curr_day){
 		$curr_day.removeClass('editable');
 		($curr_day).addClass('highlight');
 		//Get the screen height and width
-			
+		console.log('successful');	
 		}
 	});
 };	
@@ -291,5 +264,25 @@ $(document).ready(function(){
 		}
 	});
    
+	$('.window .close').click(function () {
+		//Cancel the link behavior
+			
+			$('#mask').hide();
+			$('.window').hide();
+			console.log('calling onClickDay func');
+			onClickDay($divs);
+			});	
+
+	//if mask is clicked
+	$('#mask').click(function () {
+		$('#mask').hide();
+		$('.window').hide();
+	});
+	
+	//if mask is clicked
+	$('.window .cancel').click(function () {
+		$('#mask').hide();
+		$('.window').hide();
+	});
 });
 
