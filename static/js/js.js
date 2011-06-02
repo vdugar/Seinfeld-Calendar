@@ -65,7 +65,7 @@ var makeCurrentEditable=function(){
 		var maskHeight = $(document).height();
 		var maskWidth = $(window).width();
 		
-		console.log('editable div clicked');
+		
 		//Set heigth and width to mask to fill up the whole screen
 		$('#mask').css({'width':maskWidth,'height':maskHeight});
 		
@@ -117,7 +117,7 @@ var onClickDay = function($curr_day){
 	}
 	//Posting data to the server
 	streak_string=JSON.stringify(streak);
-	console.log(streak_string);
+	
 	$.ajax({
 		url:'post_streak/',
 		data:streak_string,
@@ -128,7 +128,7 @@ var onClickDay = function($curr_day){
 		$curr_day.removeClass('editable');
 		($curr_day).addClass('highlight');
 		//Get the screen height and width
-		console.log('successful');	
+		
 		}
 	});
 };	

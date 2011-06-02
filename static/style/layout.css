@@ -104,9 +104,14 @@ div{margin:0;}
 	color: #333;
 }
 
-#banner .image {
-	background: url("../images/seinfeld.png") 100% center no-repeat;
-	background-size:35%;
+.image{
+	float:right;
+	text-align:right;
+	padding-top:30px;
+}
+
+.image img{
+		width:300px;
 }
 
 hr {
