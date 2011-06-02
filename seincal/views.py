@@ -104,6 +104,8 @@ def signup(request):
 						
 			return HttpResponseRedirect('/')
 	else:
+		if request.user.is_authenticated():
+			return HttpResponseRedirect('/')
 		signupForm=SignupForm()
 		loginForm=LoginForm(auto_id=False)
 	return render_to_response('registration/login.html',{'loginForm':loginForm, 'signupForm':signupForm},context_instance=RequestContext(request))
