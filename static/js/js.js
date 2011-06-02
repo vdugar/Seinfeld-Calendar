@@ -227,7 +227,7 @@ $(document).ready(function(){
 	boxWidth = (quo/32)-4;
 	$('.wrap').width(quo+2);
 	$('.daylabel').width(boxWidth+4);
-	$('.label').width(boxWidth);
+	$('.monthlabel').width(boxWidth);
 	$('.day').width(boxWidth);
 	$('.day').height(boxWidth);
 	

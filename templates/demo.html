@@ -1,20 +1,21 @@
 <html>
-<head><title>Seinfeld Calendar</title>
+<head><title>Seinfeld Calendar - Demo</title>
 <link rel="stylesheet" href="../static/style/reset.css"/>
-<link rel="stylesheet" href="../static/style/style.css"/>
+<link rel="stylesheet" href="../static/style/layout.css"/>
 <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
 <link rel="shortcut icon" href="../static/images/favicon.png"/>
 <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
 <script src="../static/js/demojs.js"></script>
+<script src="../static/js/json2.js"></script>
 </head>
 <body>
-	<div class="header">
-	</div>
+
+	<div class="block"></div>
 	<div class="wrap">
-		<h3 class="demo">hi. welcome to the demo. to get started click <a href='dummy' class="next"> start</a></h3>
 		<div class="bar"/>
+			<p class="demo">hi. welcome to the demo. to get started click <a href='dummy' class="next"> start</a></p>
 			<div id="message">
-				<input type="text" id="title" onclick="toggle_editor()"/>
+				<input type="text" id="title" onclick="toggle_editor()"calose/>
 				<div id="tools" style="display:none;">
 					<input id="save" value="SAVE" tabindex="12" type="submit" onclick="save();">
 					<span>OR</span>
@@ -23,7 +24,7 @@
 			</div>
 			<div class="menu">
 					<a onclick="toggle_editor()" class="pointable">set task</a> / 
-					<a href="../signup/">sign me up!</a>
+					<a href="../logout/">logout</a>
 			</div>
 		</div>
 		<div class="clear">
@@ -67,7 +68,7 @@
 		<div class="clear">
 		</div>
 		<div class="row jan">
-			<div class="label "><p>J</p>
+			<div class="monthlabel "><p>J</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -104,7 +105,7 @@
 		</div>
 		
 		<div class="row feb">
-			<div class="label "><p>F</p>
+			<div class="monthlabel "><p>F</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -138,7 +139,7 @@
 		</div>
 
 		<div class="row mar">
-			<div class="label "><p>M</p>
+			<div class="monthlabel "><p>M</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -175,7 +176,7 @@
 		</div>
 		
 		<div class="row apr">
-			<div class="label "><p>A</p>
+			<div class="monthlabel "><p>A</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -213,7 +214,7 @@
 		</div>
 
 		<div class="row may">
-			<div class="label "><p>M</p>
+			<div class="monthlabel "><p>M</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -252,7 +253,7 @@
 		</div>
 
 		<div class="row jun">
-			<div class="label "><p>J</p>
+			<div class="monthlabel "><p>J</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -290,7 +291,7 @@
 		</div>
 		
 		<div class="row jul">
-			<div class="label "><p>J</p>
+			<div class="monthlabel "><p>J</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -330,7 +331,7 @@
 		
 
 		<div class="row aug">
-			<div class="label "><p>A</p>
+			<div class="monthlabel "><p>A</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -371,7 +372,7 @@
 		
 
 		<div class="row sep">
-			<div class="label "><p>S</p>
+			<div class="monthlabel "><p>S</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -410,7 +411,7 @@
 	
 
 		<div class="row oct">
-			<div class="label "><p>O</p>
+			<div class="monthlabel "><p>O</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -449,7 +450,7 @@
 		</div>
 		
 		<div class="row nov">
-			<div class="label "><p>N</p>
+			<div class="monthlabel "><p>N</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -487,7 +488,7 @@
 		</div>
 		
 		<div class="row dec">
-			<div class="label "><p>D</p>
+			<div class="monthlabel "><p>D</p>
 			</div>
 			<div class="day 1">
 			</div><div class="day 2">
@@ -529,16 +530,12 @@
 
 	<!-- Start of Sticky Note -->
 		<div id="dialog2" class="window">
-		<br/>
 		<p>
-		I solemnly declare that </p>
-		<input type="button" value="i have completed my task for today!" class="submit2 close"/>
-		<input type="button" value="i have been upto no good today!" class="submit2 cancel"/>
+		I solemnly declare that</p><br/>
+		<input type="button" value="I'm done for today!" class="submit2 close"/>
+		<input type="button" value="I have been upto no good today!" class="submit2 cancel"/>
 		</div>
 	<!-- End of Sticky Note -->
-
-
-
 	<!-- Mask to cover the whole screen -->
 	 <div id="mask"></div>
 

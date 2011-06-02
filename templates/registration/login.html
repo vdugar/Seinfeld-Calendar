@@ -1,143 +1,125 @@
 <!DOCTYPE html>
 <html><head>
 <title>Seinfeld Calendar</title>
-<link rel="stylesheet" type="text/css" media="all" href="../static/style/reset.css">
-<link rel="stylesheet" type="text/css" media="all" href="../static/style/960.css">
-<link rel="stylesheet" type="text/css" media="all" href="../static/style/layout.css">
-<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
-<link rel="shortcut icon" href="../static/images/favicon.png"/>
+	<link rel="stylesheet" type="text/css" media="all" href="../static/style/reset.css">
+	<link rel="stylesheet" type="text/css" media="all" href="../static/style/960.css">
+	<link rel="stylesheet" type="text/css" media="all" href="../static/style/layout.css">
+	<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="../static/images/favicon.png"/>
 </head>
-	<body>
+
+<body>
+<div id="cover">
 	<div class="header">
 	<div class="container_12 clearfix">
 		<div class="grid_12">
-			<h1>
-				<a href="">Seinfeld Calendar</a>
-			</h1>
-			<nav>
-				<div>
-				{% if loginForm.errors %}
-					<p class="error">Invalid username or password</p>
-				{% endif %}
-	<form action='' method='POST'>
-		{% csrf_token %}
-		<table>
-				<tbody>
-					<tr>
-						<td><span class="label">Username</span></td>
-						<td><span class="label">Password</span></td>
-					</tr>
-					<tr>
-						<!--<td><input id="id_username" type="text" name="username" maxlength="30" class="textinput"></td>
-						<td><input id="id_password" type="password" name="password" maxlength="30" class="textinput"></td>-->
-						<td>{{loginForm.username}}</td>
-						<td>{{loginForm.password}}</td>
-						<td><input type="submit" name='login' value="Log In" class="submit"></td>
-					</tr>
-				</tbody>
-		</table>
-	</form>
-</div>
-			</nav>
+			<h1><a href=""></a></h1>
+			
+				<div class="nav">
+					{% if loginForm.errors %}
+						<p class="error">Invalid username or password</p>
+					{% endif %}
+					<form action='' method='POST'>
+						{% csrf_token %}
+						<table>
+								<tbody>
+									<tr>
+										<td><span class="label">Username</span></td>
+										<td><span class="label">Password</span></td>
+									</tr>
+									<tr>
+										<!--<td><input id="id_username" type="text" name="username" maxlength="30" class="textinput"></td>
+										<td><input id="id_password" type="password" name="password" maxlength="30" class="textinput"></td>-->
+										<td>{{loginForm.username}}</td>
+										<td>{{loginForm.password}}</td>
+										<td><input type="submit" name='login' value="Log In" class="submit"></td>
+									</tr>
+								</tbody>
+						</table>
+					</form>
+				</div>
+			
 		</div>
 	</div>
 	</div>	
 
-	<section id="banner">
-			<div>
-				<div class="container_12 clearfix image">
-					<div class="grid_12">
-						<h2>Don't break the chain...</h2>
-					</div>
-					<div class="grid_7">
-						<p>...<i>or an ancient curse will befall you</i>. Seriously. Ask Jerry Seinfeld.<br/><br/>Starting out with something new and having trouble doing it regularly? Grab a Seinfeld Calendar, put a big red mark over every day you do it, and let the streak grow. You'll hate to break the chain, especially when you have a few days under your belt. Simple, but it works.</p>	
-					</div>
-					<hr/>
-				</div>
-
+	<div id="banner">
+		<div class="container_12 clearfix image">
+			<div class="grid_12">
+				<h2>Don't break the chain...</h2>
 			</div>
-			
-
-		</section>
-
-		<section id="content" class="container_12 clearfix ">
 			<div class="grid_7">
-				some content here
+				<p>...<i>or an ancient curse will befall you</i>. Seriously. Ask Jerry Seinfeld.<br/><br/>Starting out with something new and having trouble doing it regularly? Grab a Seinfeld Calendar, put a big red mark over every day you do it, and let the streak grow. You'll hate to break the chain, especially when you have a few days under your belt. Simple, but it works.<br/><br/>
+				<a href="../demo/" class="submit2">Try a demo</a><br/><br/></p>
 			</div>
-			<div class="grid_4 push_1">
-				<div id="" class="">
-	
+			<hr/>
+		</div>		
+	</div>
 
-	<form action='' method='POST'>
-		{% csrf_token %}		
-		<table cellspacing="0" cellpadding="1">
-						<tbody>
-							<tr>
-							<td class="label2"><label for="id_username">Username </label></td>
-							<td>
-								{{signupForm.username}}<br/>
-								{% if signupForm.username.errors %}
-									{% for error in signupForm.username.errors %}
-										<p class="error">{{ error }}</p>
-									{% endfor %}
-								{% endif %}		
-										
-							</td>
-							</tr>
+	<div id="content" class="container_12 clearfix ">
+		<div class="grid_7">
+			some content here
+		</div>
+		
+		<div class="grid_4 push_1">
+			<form action='' method='POST'>
+				{% csrf_token %}		
+				<table cellspacing="0" cellpadding="1">
+					<tbody>
+						<tr>
+						<td class="label2"><label for="id_username">Username: </label></td>
+						<td>
+							{{signupForm.username}}<br/>
+							{% if signupForm.username.errors %}
+								{% for error in signupForm.username.errors %}
+									<p class="error">{{ error }}</p>
+								{% endfor %}
+							{% endif %}		
+									
+						</td>
+						</tr>
 
-							<tr>
-							<td class="label2"><label for="id_password" >Password </label></td>
-							<td>
-								{{signupForm.password}}<br/>
-								{% if signupForm.password.errors %}
-									{% for error in signupForm.password.errors %}
-										<p class="error">{{ error }}</p>
-									{% endfor %}
-								{% endif %}
-							</td>
-							</tr>
+						<tr>
+						<td class="label2"><label for="id_password" >Password:  </label></td>
+						<td>
+							{{signupForm.password}}<br/>
+							{% if signupForm.password.errors %}
+								{% for error in signupForm.password.errors %}
+									<p class="error">{{ error }}</p>
+								{% endfor %}
+							{% endif %}
+						</td>
+						</tr>
 
-							<tr>
-							<td class="label2"><label for="id_email" >Email </label></td>
-							<td>
-								{{signupForm.email}}<br/>
-								{% if signupForm.email.errors %}
-									{% for error in signupForm.email.errors %}
-										<p class="error">{{ error }}</p>
-									{% endfor %}
-								{% endif %}
-							</td>
-							</tr>
+						<tr>
+						<td class="label2"><label for="id_email" >Email:  </label></td>
+						<td>
+							{{signupForm.email}}<br/>
+							{% if signupForm.email.errors %}
+								{% for error in signupForm.email.errors %}
+									<p class="error">{{ error }}</p>
+								{% endfor %}
+							{% endif %}
+						</td>
+						</tr>
 
-							<tr>
-							<td>&nbsp;</td>
-							<td><input value="Sign Up. It's Free" type="submit" class="submit2" name='signup'></td>
-							</tr>
-						</tbody>
-					</table>
-	</form>	
-
-</div>
-
-			</div>
-			
-		</section>
-		<footer>
-	<div class="container_12 clearfix">
-		<div class="clearfix">
-			<div class="grid_8">
-				Contact Us. All Rights Reserved. 
-			</div>
-			
+						<tr>
+						<td>&nbsp;</td>
+						<td><input value="Sign Up. It's Free" type="submit" class="submit2" name='signup'></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>	
 		</div>
 	</div>
-</footer>	
+			
+		
+	<div class="footer">
+		<div class="container_12 clearfix ">
+					<p>Contact Us. All Rights Reserved. </p>
+		</div>
+	</div>	
+</div>
 </body>
 </html>
-
-	
-
-
-</body>
-</html>	
