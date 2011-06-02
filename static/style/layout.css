@@ -106,6 +106,7 @@ div{margin:0;}
 
 #banner .image {
 	background: url("../images/seinfeld.png") 100% center no-repeat;
+	background-size: 35%;
 }
 
 hr {
@@ -343,6 +344,7 @@ a:hover{
 	position: relative;
 	float: right;
 	padding-top:10px;
+	margin-right:10px;
 }
 
 #message{
@@ -376,9 +378,12 @@ a:hover{
 }
 
 .pointable {
-	cursor:hand;
+	cursor:pointer;
 }
 
+.pointable:hover{
+	text-decoration:underline;
+}
 .cancel{
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff3f3f), to(#ff1010));
 	background: -moz-linear-gradient(100% 100% 90deg, #ff1010, #ff3f3f);

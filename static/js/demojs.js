@@ -88,14 +88,6 @@ var onClickDay = function($curr_day){
 	}
 
 
-function toggle_editor(){
-	if(!($('#title').hasClass('editing'))){
-		$('#title').addClass('editing');
-		$('#title').select();
-		$('#tools').show();
-	}
-	curr_title=$('#title').val();
-}
 
 function cancel_edit(){
 		$('#title').val(curr_title);
@@ -115,7 +107,7 @@ function save(){
 	$("div.editable").removeClass('editable');
 	$('.'+months[today.getMonth()]).children('.'+today.getDate()).addClass('start');
 	makeCurrentEditable();
-	$('.demo').html("Great! Your task has been set. The box with green border indicates the starting date. Once you complete the activity for a day, click that day's box, and set your task to completed.");
+	$('.demo').html("Great! Your task has been set. The box with green border indicates the starting date. Once you complete the activity for a day, click that day's box, and set your task to completed. You can only set your task to be completed for either today or the day before.");
 		
 }
 
@@ -153,13 +145,13 @@ $(document).ready(function(){
 	yesterday.setDate(today.getDate()-1);
 	
 	$(".next").click(function (e) {
-		$('.demo').html("To get started, set the the task by either clicking on the title or the 'set task' link. This will set the start date for your task.");
+		$('.demo').html("First, set the the task by either clicking on the title or the 'set task' link. This will set the start date for your task.");
 		e.preventDefault();
 	});
 	
 	$('.enddemo').live('click', function(ev) {
 		ev.preventDefault();
-		$('.demo').html("That's it. Want to <a href='../signup'>sign up?</a>");
+		$('.demo').html("This is the calendar when the user started on March 11. The grey boxes represent the days when he missed the task. That's it. Want to <a href='../signup'>sign up?</a>");
 		$('.day').removeClass('highlight');
 		$('.day').removeClass('start');
 		
@@ -201,5 +193,31 @@ $(document).ready(function(){
 		$('#mask').hide();
 		$('.window').hide();
 	});
+
+	$(".pointable").click(function (e) {
+		e.preventDefault();
+
+		if(!($('#title').hasClass('editing'))){
+			$('#title').addClass('editing');
+			$('#title').select();
+			$('#tools').show();
+		}
+		curr_title=$('#title').val();	
+		
+	});
+
+	$("#title").click(function(event) {
+
+		event.preventDefault();
+		if(!($('#title').hasClass('editing'))){
+			$('#title').addClass('editing');
+			$('#title').select();
+			$('#tools').show();
+		}
+
+		curr_title=$('#title').val();	
+		
+	});
+
 });
 

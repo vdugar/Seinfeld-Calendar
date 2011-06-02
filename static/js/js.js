@@ -133,14 +133,7 @@ var onClickDay = function($curr_day){
 	});
 };	
 
-function toggle_editor(){
-	if(!($('#title').hasClass('editing'))){
-		$('#title').addClass('editing');
-		$('#title').select();
-		$('#tools').show();
-	}
-	curr_title=$('#title').val();
-}
+
 
 function cancel_edit(){
 		$('#title').val(curr_title);
@@ -233,7 +226,7 @@ $(document).ready(function(){
 	$('.day').width(boxWidth);
 	$('.day').height(boxWidth);
 
-	
+	$('#message').css('marginLeft',boxWidth);
 
 	
 	
@@ -277,7 +270,6 @@ $(document).ready(function(){
 			
 			$('#mask').hide();
 			$('.window').hide();
-			console.log('calling onClickDay func');
 			onClickDay($divs);
 			});	
 
@@ -292,5 +284,27 @@ $(document).ready(function(){
 		$('#mask').hide();
 		$('.window').hide();
 	});
+
+	$(".pointable").click(function (e) {
+		if(!($('#title').hasClass('editing'))){
+			$('#title').addClass('editing');
+			$('#title').select();
+			$('#tools').show();
+		}
+		curr_title=$('#title').val();	
+		e.preventDefault();
+	});
+
+	$("#title").click(function (e) {
+		if(!($('#title').hasClass('editing'))){
+			$('#title').addClass('editing');
+			$('#title').select();
+			$('#tools').show();
+		}
+
+		curr_title=$('#title').val();	
+		e.preventDefault();
+	});
+
 });
 
