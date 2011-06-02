@@ -81,7 +81,7 @@ var makeCurrentEditable=function(){
 		$('.window').css('left', winW/2-$('.window').width()/2);
 	
 		//transition effect
-		$('.window').fadeIn(1000); 		
+		$('.window').fadeTo('slow',1); 		
     });
 };
 
@@ -216,6 +216,8 @@ $(document).ready(function(){
 	});
 	//end of CSRF stuff
 	
+	$('.jserror').toggle();
+	$('.wrap').toggle();
 	
 	var width = $(window).width();
 	if(width<1024)
@@ -230,6 +232,8 @@ $(document).ready(function(){
 	$('.monthlabel').width(boxWidth);
 	$('.day').width(boxWidth);
 	$('.day').height(boxWidth);
+
+	
 	
 	//Setting today's and yesterday's date
 	today=new Date();
@@ -264,6 +268,8 @@ $(document).ready(function(){
 		}
 	});
    
+   $('.wrap').fadeTo(1000, 1);
+
 	$('.window .close').click(function () {
 		//Cancel the link behavior
 			
