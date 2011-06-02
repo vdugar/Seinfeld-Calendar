@@ -3,6 +3,7 @@ html,body {
 	font: 14px/1.4 'lucida grande',Verdana, sans-serif;
 }
 #cover{
+
 	width:100%;
 	background-color: #f3f3f3;
 	margin:0;
@@ -217,7 +218,12 @@ hr {
 	margin:0;
 }
 
-
+.jserror{
+	width:500px;
+	margin: 40px auto;
+	text-align:justify;
+	font-size:16px;
+}
 
 .block {
 	background: #000;
@@ -230,8 +236,10 @@ hr {
 }
 
 .wrap{	
+	display:none;
 	width:1186px;
 	margin: 30px auto;
+	opacity:0;
 }
 
 .row{
@@ -275,6 +283,8 @@ a:hover{
 }
 
 .editable{
+	background:url('../images/open.gif') center no-repeat;
+	background-size: 95%;
 	cursor:pointer ;
 	border-color: #000;
 }

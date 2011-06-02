@@ -234,6 +234,8 @@ $(document).ready(function(){
 	$('.day').height(boxWidth);
 
 	
+
+	
 	
 	//Setting today's and yesterday's date
 	today=new Date();

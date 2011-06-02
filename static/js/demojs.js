@@ -84,7 +84,7 @@ var onClickDay = function($curr_day){
 	($curr_day).removeClass('editable');
 	($curr_day).addClass('highlight');
 	
-	$('.demo').html("Once you mark a day, it turns red. Repeat it for succesive days and you begin to form a link. In case you miss a day, the link gets broken. To see what the calendar make look like in a few days, <a href='dummy' class='enddemo'>click here</a>");
+	$('.demo').html("Once you mark a day, it turns red. Repeat it for successive days and you begin to form a link. In case you miss a day, the link gets broken. To see what the calendar may look like in a few days, <a href='dummy' class='enddemo'>click here</a>");
 	}
 
 
@@ -111,6 +111,8 @@ function save(){
 	
 	$("div.highlight").removeClass('highlight');
 	$("div.start").removeClass('start');
+	$("div.miss").removeClass('miss');
+	$("div.editable").removeClass('editable');
 	$('.'+months[today.getMonth()]).children('.'+today.getDate()).addClass('start');
 	makeCurrentEditable();
 	$('.demo').html("Great! Your task has been set. The box with green border indicates the starting date. Once you complete the activity for a day, click that day's box, and set your task to completed.");
@@ -139,7 +141,12 @@ var setDisplay = function(){
     
 $(document).ready(function(){
 	
+	$('.jserror').toggle();
+	$('.wrap').toggle();
+	
 	setDisplay();
+
+	 $('.wrap').fadeTo(1000, 1);
 	//Setting today's and yesterday's date
 	today = new Date();
 	yesterday = new Date();
