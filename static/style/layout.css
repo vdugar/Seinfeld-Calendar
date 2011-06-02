@@ -333,7 +333,7 @@ a:hover{
 	display:none;
 }
   
-#dialog2{
+#dialog2, #loading{
 	position:absolute;
 	left:0;
 	top:0;
@@ -345,9 +345,18 @@ a:hover{
 	background:url(../images/notice.png) no-repeat 0 0 transparent; 
 	width:326px; 
 	height:229px;
-	padding:50px 0 20px 25px;
+	padding:50px 20px 20px 25px;
 }
 
+#loading{
+	text-align:center;
+
+}
+
+#loading p{
+	font-family: 'Special Elite', arial, serif;
+	font-size:16px;
+}
 .bar{
 	width: 100%;
 	vertical-align: bottom;

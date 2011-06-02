@@ -123,7 +123,19 @@ var onClickDay = function($curr_day){
 		data:streak_string,
 		type:'POST',
 		async:false,
+		beforeSend: function() { 
+
+		$('#loading').toggle();
+
+		var winH = $(window).height();
+		var winW = $(window).width();
+		//Set the popup window to center
+		$('#loading').css('top',  winH/2-$('.window').height()/2);
+		$('#loading').css('left', winW/2-$('.window').width()/2);
+	
+		 },
 		success: function(value) {
+		$('#loading').hide();
 		($curr_day).unbind('click');
 		$curr_day.removeClass('editable');
 		($curr_day).addClass('highlight');
@@ -156,7 +168,19 @@ function save(){
 		url:'set_task/',
 		data:JSON.stringify(query),
 		type:'POST',
+		beforeSend: function() { 
+
+		$('#loading').toggle();
+
+		var winH = $(window).height();
+		var winW = $(window).width();
+		//Set the popup window to center
+		$('#loading').css('top',  winH/2-$('.window').height()/2);
+		$('#loading').css('left', winW/2-$('.window').width()/2);
+	
+		 },
 		success: function(value) {
+			$('#loading').hide();
 			/*  Clearing up the calendar here itself.
 				Can redirect to the same page again,  but why make the extra server call?*/
 			$("div.highlight").removeClass('highlight');
