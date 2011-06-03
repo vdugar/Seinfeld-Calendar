@@ -151,7 +151,7 @@ $(document).ready(function(){
 	
 	$('.enddemo').live('click', function(ev) {
 		ev.preventDefault();
-		$('.demo').html("This is the calendar when the user started on March 11. The grey boxes represent the days when he missed the task. That's it. Want to <a href='../signup'>sign up?</a>");
+		$('.demo').html("This is the calendar when the user started on March 11. The grey boxes represent the days when he missed the task. Set this as your homepage, so that you're always reminded of your task. That's it. Want to <a href='../signup'>sign up?</a>");
 		$('.day').removeClass('highlight');
 		$('.day').removeClass('start');
 		
